@@ -5,18 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.ToString;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
+import lombok.ToString;
+
 @Data
 @ToString(exclude = "password")
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class AppUser {
 
 	public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
@@ -33,7 +33,8 @@ public class AppUser {
 		this.password = PASSWORD_ENCODER.encode(password);
 	}
 
-	protected AppUser() {}
+	protected AppUser() {
+	}
 
 	public AppUser(String name, String password, String... roles) {
 

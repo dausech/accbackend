@@ -20,26 +20,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.userDetailsService(this.userDetailsService)
-				.passwordEncoder(AppUser.PASSWORD_ENCODER);
+		auth.userDetailsService(this.userDetailsService).passwordEncoder(AppUser.PASSWORD_ENCODER);
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				//.antMatchers("/home/**", "/style.css").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
-				.defaultSuccessUrl("/", true)
-				.permitAll()
-				.and()
-			.httpBasic()
-				.and()			
-			.logout()
-				.logoutSuccessUrl("/");
+		http.authorizeRequests()		   
+		    .antMatchers("/users/**", "/style.css").permitAll()		    		    
+		    .anyRequest().authenticated()
+		    .and()			
+			.formLogin().loginPage("/login").permitAll()
+		//	.and().httpBasic()
+			.and().logout().logoutSuccessUrl("/");
+		//	.and().csrf().disable();
 	}
 
 }

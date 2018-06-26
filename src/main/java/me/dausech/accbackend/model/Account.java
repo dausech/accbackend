@@ -8,18 +8,17 @@ import javax.persistence.Id;
 @Entity
 public class Account {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column
-    private String accountNumber;
+	@Column
+	private String accountNumber;
 
-    @Column
-    private String description;
+	@Column
+	private String description;
 
-    @Column
-    private AccountType accountType;
+	@Column
+	private AccountType accountType;
 
 }
-

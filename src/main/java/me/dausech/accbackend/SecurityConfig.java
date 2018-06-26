@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		    .antMatchers("/users/**", "/style.css").permitAll()		    		    
 		    .anyRequest().authenticated()
 		    .and()			
-			.formLogin().loginPage("/login").permitAll()
+			.formLogin().permitAll()
 		//	.and().httpBasic()
 			.and().logout().logoutSuccessUrl("/");
 		//	.and().csrf().disable();

@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "accbackend",
+                "projectName": "accbackend",
+                "workingDirectory": "c:\\Users\\Douglas\\Documents\\heroku\\accbackend",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "accbackend",
+                "projectName": "accbackend",
+                "workingDirectory": "c:\\Users\\Douglas\\Documents\\heroku\\accbackend",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

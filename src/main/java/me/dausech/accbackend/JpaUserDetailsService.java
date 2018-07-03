@@ -14,12 +14,9 @@ import me.dausech.accbackend.model.AppUserRepository;
 @Component
 public class JpaUserDetailsService implements UserDetailsService {
 
-	private final AppUserRepository repository;
-
 	@Autowired
-	public JpaUserDetailsService(AppUserRepository repository) {
-		this.repository = repository;
-	}
+	AppUserRepository repository;
+	
 
 	@Override
 	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {

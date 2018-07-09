@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -31,6 +32,7 @@ public class DbTests {
 	private TransactionRepository trnRepo;
 	
 	@Test
+	@WithMockUser(username="douglas",roles={"USER","ADMIN"})
 	public void saveNewAccount() {
 		Account account = new Account();
 		account.setAccountNumber("1.0.0.1");
@@ -47,6 +49,7 @@ public class DbTests {
 	}
 	
 	@Test
+	@WithMockUser(username="douglas",roles={"USER","ADMIN"})
 	public void saveNewTransaction() {
 		Account acct = new Account();
 		acct.setAccountNumber("1.0.0.10");

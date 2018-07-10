@@ -27,10 +27,10 @@ public class DatabaseLoader implements CommandLineRunner {
 		this.repository.save(new AppUser("user", "secret", "ROLE_USER"));
 
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken("douglas",
-				"secret", AuthorityUtils.createAuthorityList("ROLE_ADMIN")));
+				"xxx", AuthorityUtils.createAuthorityList("ROLE_ADMIN")));
 		
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken("user",
-				"secret", AuthorityUtils.createAuthorityList("ROLE_USER")));
+				"xxx", AuthorityUtils.createAuthorityList("ROLE_USER")));
 
 		SecurityContextHolder.clearContext();
 	}

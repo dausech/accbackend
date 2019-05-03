@@ -15,4 +15,9 @@ public class Home {
 	public String hello() {
 		return "hello";
 	}
+
+	@GetMapping("/home")
+	public String home() {
+		return "home sweet home";
+	}
 }
